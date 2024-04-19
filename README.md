@@ -72,7 +72,7 @@ Implemented methods:
 - [ ] `sorted`
 - [ ] `staticmethod`
 - [ ] `str`
-- [ ] `sum`
+- [X] `sum`
 - [ ] `super`
 - [ ] `tuple`
 - [ ] `type`

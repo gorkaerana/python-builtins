@@ -1,4 +1,11 @@
-from typing import Callable
+from typing import Callable, Iterable
+
+
+def sum_(iterable: Iterable, /, start: int = 0):
+    s = start
+    for i in iterable:
+        s += i
+    return s
 
 
 class property_:
