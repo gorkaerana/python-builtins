@@ -1,5 +1,3 @@
-from decimal import Decimal
-from math import isclose
 from typing import Callable, Iterable
 
 
@@ -49,6 +47,3 @@ class property_:
 
     def __call__(self, *args, **kwargs):
         return self.__init__(*args, **kwargs)
-
-if __name__ == "__main__":
-    print(abs_(1+1j))
