@@ -58,6 +58,12 @@ class property_:
         return self.__init__(*args, **kwargs)
 
 
+def reversed_(seq: Iterable) -> Iterable:
+    l = list(seq)
+    while l:
+        yield l.pop()
+
+
 def sum_(iterable: Iterable, /, start: int = 0):
     s = start
     for i in iterable:

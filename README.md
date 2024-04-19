@@ -64,7 +64,7 @@ Implemented methods:
 - [ ] `quit`
 - [ ] `range`
 - [ ] `repr`
-- [ ] `reversed`
+- [X] `reversed`
 - [ ] `round`
 - [ ] `set`
 - [ ] `setattr`
