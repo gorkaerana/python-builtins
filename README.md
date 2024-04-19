@@ -1,6 +1,6 @@
 # python-builtins
 
-A Python implementation of miscellaneous Python built-in functions. 
+Pure-Python implementations of miscellaneous Python built-in functions. 
 
 Implemented methods:
 - [ ] `abs`
