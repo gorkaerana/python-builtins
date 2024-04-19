@@ -3,7 +3,7 @@
 Pure-Python implementations of miscellaneous Python built-in functions. 
 
 Implemented methods:
-- [ ] `abs`
+- [X] `abs`
 - [ ] `aiter`
 - [ ] `all`
 - [ ] `anext`

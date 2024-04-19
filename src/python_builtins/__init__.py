@@ -1,6 +1,11 @@
 from typing import Callable, Iterable
 
 
+def abs_(x: int | float | complex):
+    if isinstance(x, complex):
+        return ((x.real ** 2) + (x.imag ** 2)) ** 0.5
+    return x if x >= 0 else -x
+
 def sum_(iterable: Iterable, /, start: int = 0):
     s = start
     for i in iterable:
