@@ -22,13 +22,15 @@ def test_getter():
     foo = Foo()
     assert foo.bar == 1
 
+
 def test_setter():
     foo = Foo()
     foo.bar = 2
     assert foo.bar == 2
 
+
 def test_deleter():
     foo = Foo()
 
-    with pytest.raises(AttributeError) as e_info:
+    with pytest.raises(AttributeError):
         del foo.bar
