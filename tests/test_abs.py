@@ -1,7 +1,14 @@
-import pytest
+from math import isclose
+
+from hypothesis import given
+from hypothesis.strategies import complex_numbers, floats, integers
 
 from python_builtins import abs_
 
-@pytest.mark.parametrize("x", [1, -1, 1., -1., 1+1j, 1-1j])
+
+@given(
+    integers()
+    | floats(allow_nan=False, allow_infinity=False)
+)
 def test_abs(x):
-    assert abs_(x) == abs(x)
+    assert isclose(abs_(x), abs(x))
