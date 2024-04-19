@@ -49,7 +49,7 @@ Implemented methods:
 - [ ] `license`
 - [ ] `list`
 - [ ] `locals`
-- [ ] `map`
+- [X] `map`
 - [ ] `max`
 - [ ] `memoryview`
 - [ ] `min`

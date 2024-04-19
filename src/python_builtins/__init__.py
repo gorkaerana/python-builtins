@@ -20,11 +20,13 @@ def any_(iterable: Iterable) -> bool:
     return False
 
 
-def sum_(iterable: Iterable, /, start: int = 0):
-    s = start
-    for i in iterable:
-        s += i
-    return s
+def map_(function: Callable, iterable: Iterable, *iterables: Iterable):
+    if iterables:
+        for i in zip(iterable, *iterables):
+            yield function(*i)
+    else:
+        for i in iterable:
+            yield function(i)
 
 
 class property_:
@@ -54,3 +56,10 @@ class property_:
 
     def __call__(self, *args, **kwargs):
         return self.__init__(*args, **kwargs)
+
+
+def sum_(iterable: Iterable, /, start: int = 0):
+    s = start
+    for i in iterable:
+        s += i
+    return s
