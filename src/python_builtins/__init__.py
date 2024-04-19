@@ -13,6 +13,13 @@ def all_(iterable: Iterable) -> bool:
     return True
 
 
+def any_(iterable: Iterable) -> bool:
+    for i in iterable:
+        if i:
+            return True
+    return False
+
+
 def sum_(iterable: Iterable, /, start: int = 0):
     s = start
     for i in iterable:

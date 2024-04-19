@@ -5,9 +5,9 @@ Pure-Python implementations of miscellaneous Python built-in functions.
 Implemented methods:
 - [X] `abs`
 - [ ] `aiter`
-- [ ] `all`
+- [X] `all`
 - [ ] `anext`
-- [ ] `any`
+- [X] `any`
 - [ ] `ascii`
 - [ ] `bin`
 - [ ] `bool`
