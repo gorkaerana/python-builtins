@@ -1,3 +1,4 @@
+from collections.abc import Sequence
 from typing import Callable, Iterable
 
 
@@ -18,6 +19,20 @@ def any_(iterable: Iterable) -> bool:
         if i:
             return True
     return False
+
+
+class enumerate_:
+    def __init__(self, iterable, start: int = 0):
+        self.iterable = iter(iterable)
+        self.start = start
+        self.count = self.start - 1
+
+    def __next__(self):
+        self.count += 1
+        return self.count, next(self.iterable)
+
+    def __iter__(self):
+        return self
 
 
 def map_(function: Callable, iterable: Iterable, *iterables: Iterable):
@@ -102,7 +117,7 @@ class range_:
             i += 1
 
 
-def reversed_(seq: Iterable) -> Iterable:
+def reversed_(seq: Sequence) -> Iterable:
     if hasattr(seq, "__reversed__"):
         yield from seq.__reversed__()
     elif hasattr(seq, "__len__") and hasattr(seq, "__getitem__"):
