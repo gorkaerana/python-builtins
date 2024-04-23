@@ -45,8 +45,10 @@ def test_reversed_object_with___reversed__(iterable):
     class Foo:
         def __init__(self, iterable):
             self.iterable = iterable
+
         def __reversed__(self):
             yield from self.iterable
+
     it1, it2 = tee(iterable)
     foo = Foo(it1)
     assert list(reversed_(foo)) == list(it2)
