@@ -12,6 +12,7 @@ from hypothesis.strategies import (
     fractions,
     integers,
     iterables,
+    lists,
     none,
     text,
     timedeltas,
@@ -40,6 +41,34 @@ from python_builtins import reversed_
         | uuids()
     )
 )
-def test_reversed(iterable):
+def test_reversed_object_with___reversed__(iterable):
+    class Foo:
+        def __init__(self, iterable):
+            self.iterable = iterable
+        def __reversed__(self):
+            yield from self.iterable
     it1, it2 = tee(iterable)
-    assert list(reversed_(it1)) == list(reversed(list(it2)))
+    foo = Foo(it1)
+    assert list(reversed_(foo)) == list(it2)
+
+
+@given(
+    lists(
+        binary()
+        | booleans()
+        | characters()
+        | complex_numbers()
+        | datetimes()
+        | decimals()
+        | floats()
+        | fractions()
+        | integers()
+        | none()
+        | text()
+        | timedeltas()
+        | times()
+        | uuids()
+    )
+)
+def test_reversed_object_with___len___and___getitem__(sequence):
+    assert list(reversed_(sequence)) == list(reversed(sequence))
