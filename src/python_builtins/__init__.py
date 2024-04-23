@@ -117,3 +117,15 @@ def sum_(iterable: Iterable, /, start: int = 0):
     for i in iterable:
         s += i
     return s
+
+
+def zip_(*iterables):
+    iterables = list(map(iter, iterables))
+    while True:
+        next_ = []
+        for iterable in iterables:
+            try:
+                next_.append(next(iterable))
+            except StopIteration:
+                return
+        yield tuple(next_)
