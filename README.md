@@ -25,7 +25,7 @@ Implemented methods:
 - [ ] `dict`
 - [ ] `dir`
 - [ ] `divmod`
-- [ ] `enumerate`
+- [X] `enumerate`
 - [ ] `eval`
 - [ ] `exec`
 - [ ] `exit`
@@ -77,4 +77,4 @@ Implemented methods:
 - [ ] `tuple`
 - [ ] `type`
 - [ ] `vars`
-- [ ] `zip`
+- [X] `zip`
